@@ -1,0 +1,38 @@
+{
+  "name": "serialize",
+  "version": "0.1.0",
+  "description": "Simple serialize",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint *.js test/{**/,}*.js",
+    "test": "jest --coverage && yarn lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Flash-Card/serialize.git"
+  },
+  "author": "Alexandr Golovchuk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Flash-Card/serialize/issues"
+  },
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-es5": "^1.2.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jest": "^21.7.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "jest": "^22.1.4"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "statements": 100
+      }
+    }
+  }
+}
