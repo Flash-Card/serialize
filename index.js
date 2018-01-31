@@ -1,3 +1,5 @@
+'use strict';
+
 var dstSerialize = require('./lib/core').dst;
 var dstExistSerialize = require('./lib/core').dstExist;
 var srcSerialize = require('./lib/core').src;

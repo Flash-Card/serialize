@@ -1,10 +1,10 @@
 {
   "name": "serialize",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simple serialize",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint *.js test/{**/,}*.js",
+    "lint": "eslint *.js test/{**/,}*.js ./lib --ext .js",
     "test": "jest --coverage && yarn lint"
   },
   "repository": {

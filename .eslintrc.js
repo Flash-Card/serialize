@@ -7,7 +7,11 @@ for (const i in globals.jest) {
   if (i !== 'test' && i !== 'xtest') jest[i] = globals.jest[i]
 }
 module.exports = {
-  extends: 'standard',
+  extends: [
+    'standard',
+    'plugin:es5/no-es2015',
+    'plugin:es5/no-es2016'
+  ],
   plugins: [
     'jest',
     'security',
