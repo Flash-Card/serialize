@@ -1,0 +1,39 @@
+#!/usr/bin/env node
+var benchmark = require('benchmark');
+var chalk = require('chalk');
+var obj = require('./lib/obj');
+var core = require('./lib/core');
+
+function formatNumber (number) {
+  return String(number).replace(/\d\d\d$/, ',$&');
+}
+
+var suite = new benchmark.Suite();
+
+function setter (obj, tapl) {
+  return Object.assign(obj, { [tapl[0]]: tapl[1] }); // eslint-disable-line
+};
+
+function create (list) {
+  const fn = V => ({ [V]: x => [V, x] }); // eslint-disable-line
+  return list.reduce((A, V) => Object.assign({}, A, fn(V)), {}); // eslint-disable-line
+}
+
+suite
+  .add('object setter function', function () {
+    obj.setter({cat: 10}, ['dog', 12]);
+  })
+  .add('Object assign', function () {
+    setter({cat: 10}, ['dog', 12]);
+  })
+  .add('Create serialize', function () {
+    core.create(['cat', 'dog', 'id', 'value']);
+  })
+  .add('Create serialize es6', function () {
+    create(['cat', 'dog', 'id', 'value']);
+  })
+  .on('cycle', function (event) {
+    var hz = formatNumber(event.target.hz.toFixed(0)).padStart(7);
+    process.stdout.write(event.target.name + ' - ' + chalk.bold(hz) + ' ops/sec \n');
+  })
+  .run();

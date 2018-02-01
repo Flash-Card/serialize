@@ -18,6 +18,8 @@
     "url": "https://github.com/Flash-Card/serialize/issues"
   },
   "devDependencies": {
+    "benchmark": "^2.1.4",
+    "chalk": "^2.3.0",
     "eslint": "^4.16.0",
     "eslint-config-standard": "^11.0.0-beta.0",
     "eslint-plugin-es5": "^1.2.0",
