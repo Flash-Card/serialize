@@ -1,11 +1,11 @@
 {
   "name": "serialize",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Simple serialize",
   "main": "index.js",
   "scripts": {
     "lint": "eslint *.js test/{**/,}*.js ./lib --ext .js",
-    "test-watch": "jest --watchAll",
+    "test:watch": "jest --watchAll",
     "test": "jest --coverage && yarn lint"
   },
   "repository": {
